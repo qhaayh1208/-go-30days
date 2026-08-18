@@ -18,6 +18,13 @@ header{background:#fff;padding:17px 16px;border-bottom:1px solid #ddd;position:s
 .point span{display:none;position:absolute;left:50%;top:31px;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:800;background:#fff;padding:2px 5px;border-radius:6px;border:1px solid #ccc}
 .point input:checked+label{width:24px;height:24px;border:4px solid #fff;box-shadow:0 1px 5px #0004}.point.wrong input:checked+label{background:#d94747}.point.correct input:checked+label{background:#2f7d32}.point input:checked~span{display:block}
 .legend{text-align:center;font-size:13px;margin:8px 0 12px}.reason textarea{width:100%;min-height:120px;border:1px solid #ccc;border-radius:12px;padding:12px;font:inherit;font-size:16px}.answer summary{font-weight:800}
+
+.undo{display:none;grid-column:2/4;justify-self:start;border:1px solid #c8c8c8;background:#fff;color:#555;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:700;cursor:pointer}
+.daycard.completed .undo{display:inline-block}
+
+
+.clear-all{display:block;width:100%;border:1px solid #d5b8b8;background:#fff7f7;color:#8a3d3d;border-radius:13px;padding:12px;margin:0 0 14px;font:inherit;font-weight:800;cursor:pointer}
+
 </style></head>
 <body>
 <header><h1>30天圍棋整體應用訓練</h1></header>
@@ -25,184 +32,186 @@ header{background:#fff;padding:17px 16px;border-bottom:1px solid #ddd;position:s
 <section id="menu">
 <div class="intro"><b>🧠 下棋前四問</b><br>① 我的棋有危險嗎？<br>② 對方有棋可以攻擊嗎？<br>③ 哪裡需要連？哪裡可以切？<br>④ 都沒有的話，哪裡最大？</div>
 
+<button type="button" id="clearAll" class="clear-all">清除30天全部紀錄</button>
+
 <a class="daycard" href="#day01" data-menu-day="1">
  <span class="daynum">DAY 01</span>
  <span class="daytitle">先看危險</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：打吃與逃跑</span>
 </a>
 <a class="daycard" href="#day02" data-menu-day="2">
  <span class="daynum">DAY 02</span>
  <span class="daytitle">先救再吃</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：急所判斷</span>
 </a>
 <a class="daycard" href="#day03" data-menu-day="3">
  <span class="daynum">DAY 03</span>
  <span class="daytitle">找到打吃</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：攻擊</span>
 </a>
 <a class="daycard" href="#day04" data-menu-day="4">
  <span class="daynum">DAY 04</span>
  <span class="daytitle">連起來</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：連接</span>
 </a>
 <a class="daycard" href="#day05" data-menu-day="5">
  <span class="daynum">DAY 05</span>
  <span class="daytitle">切斷對方</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：切斷</span>
 </a>
 <a class="daycard" href="#day06" data-menu-day="6">
  <span class="daynum">DAY 06</span>
  <span class="daytitle">不要貪吃</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：全局優先</span>
 </a>
 <a class="daycard" href="#day07" data-menu-day="7">
  <span class="daynum">DAY 07</span>
  <span class="daytitle">雙打吃</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：手筋</span>
 </a>
 <a class="daycard" href="#day08" data-menu-day="8">
  <span class="daynum">DAY 08</span>
  <span class="daytitle">征子起點</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：征子</span>
 </a>
 <a class="daycard" href="#day09" data-menu-day="9">
  <span class="daynum">DAY 09</span>
  <span class="daytitle">枷的感覺</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：枷</span>
 </a>
 <a class="daycard" href="#day10" data-menu-day="10">
  <span class="daynum">DAY 10</span>
  <span class="daytitle">先手與後手</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：節奏</span>
 </a>
 <a class="daycard" href="#day11" data-menu-day="11">
  <span class="daynum">DAY 11</span>
  <span class="daytitle">眼是什麼</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：死活</span>
 </a>
 <a class="daycard" href="#day12" data-menu-day="12">
  <span class="daynum">DAY 12</span>
  <span class="daytitle">破眼</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：死活攻擊</span>
 </a>
 <a class="daycard" href="#day13" data-menu-day="13">
  <span class="daynum">DAY 13</span>
  <span class="daytitle">做眼</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：死活防守</span>
 </a>
 <a class="daycard" href="#day14" data-menu-day="14">
  <span class="daynum">DAY 14</span>
  <span class="daytitle">真假眼</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：死活判斷</span>
 </a>
 <a class="daycard" href="#day15" data-menu-day="15">
  <span class="daynum">DAY 15</span>
  <span class="daytitle">先活再攻</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：攻守轉換</span>
 </a>
 <a class="daycard" href="#day16" data-menu-day="16">
  <span class="daynum">DAY 16</span>
  <span class="daytitle">弱棋方向</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：攻擊方向</span>
 </a>
 <a class="daycard" href="#day17" data-menu-day="17">
  <span class="daynum">DAY 17</span>
  <span class="daytitle">不要從強棋逃</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：輕重判斷</span>
 </a>
 <a class="daycard" href="#day18" data-menu-day="18">
  <span class="daynum">DAY 18</span>
  <span class="daytitle">厚勢的用途</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：厚勢</span>
 </a>
 <a class="daycard" href="#day19" data-menu-day="19">
  <span class="daynum">DAY 19</span>
  <span class="daytitle">拆邊</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：布局</span>
 </a>
 <a class="daycard" href="#day20" data-menu-day="20">
  <span class="daynum">DAY 20</span>
  <span class="daytitle">大場與急場</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：全局判斷</span>
 </a>
 <a class="daycard" href="#day21" data-menu-day="21">
  <span class="daynum">DAY 21</span>
  <span class="daytitle">角邊中腹</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：價值判斷</span>
 </a>
 <a class="daycard" href="#day22" data-menu-day="22">
  <span class="daynum">DAY 22</span>
  <span class="daytitle">攻擊不等於吃</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：攻擊觀念</span>
 </a>
 <a class="daycard" href="#day23" data-menu-day="23">
  <span class="daynum">DAY 23</span>
  <span class="daytitle">先手收官</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：官子</span>
 </a>
 <a class="daycard" href="#day24" data-menu-day="24">
  <span class="daynum">DAY 24</span>
  <span class="daytitle">比較大小</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：官子計算</span>
 </a>
 <a class="daycard" href="#day25" data-menu-day="25">
  <span class="daynum">DAY 25</span>
  <span class="daytitle">交換值不值</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：取捨</span>
 </a>
 <a class="daycard" href="#day26" data-menu-day="26">
  <span class="daynum">DAY 26</span>
  <span class="daytitle">兩塊弱棋</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：全局優先</span>
 </a>
 <a class="daycard" href="#day27" data-menu-day="27">
  <span class="daynum">DAY 27</span>
  <span class="daytitle">攻守兼備</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：一手兩用</span>
 </a>
 <a class="daycard" href="#day28" data-menu-day="28">
  <span class="daynum">DAY 28</span>
  <span class="daytitle">轉身</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：棄子與全局</span>
 </a>
 <a class="daycard" href="#day29" data-menu-day="29">
  <span class="daynum">DAY 29</span>
  <span class="daytitle">找全盤最急</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：綜合判斷</span>
 </a>
 <a class="daycard" href="#day30" data-menu-day="30">
  <span class="daynum">DAY 30</span>
  <span class="daytitle">畢業挑戰</span>
- <span class="done">✓ 已完成</span>
+ <span class="done">✓ 已完成</span><button type="button" class="undo" aria-label="取消完成紀錄">取消完成</button>
  <span class="subject">主題：整體應用</span>
 </a>
 </section>
@@ -791,6 +800,41 @@ header{background:#fff;padding:17px 16px;border-bottom:1px solid #ddd;position:s
    if(!t.value.trim()){alert("請先寫下你的理由，再完成今天的任務。");t.focus();return;}
    done[d]=true; set(DONE,done); paint(); location.hash="menu";
  }));
+ 
+ 
+ var clearAll=document.getElementById("clearAll");
+ if(clearAll){
+   clearAll.addEventListener("click",function(e){
+     e.preventDefault();
+     if(confirm("要清除30天全部完成紀錄嗎？這個動作無法復原。")){
+       done={};
+       reasons={};
+       try{
+         localStorage.removeItem(DONE);
+         localStorage.removeItem(REASON);
+       }catch(err){}
+       document.querySelectorAll("[data-reason]").forEach(function(t){t.value="";});
+       document.querySelectorAll('.point input[type="radio"]').forEach(function(r){r.checked=false;});
+       document.querySelectorAll('.fourq input[type="checkbox"]').forEach(function(c){c.checked=false;});
+       paint();
+       alert("30天紀錄已全部清除。");
+     }
+   });
+ }
+
+ document.querySelectorAll(".undo").forEach(function(btn){
+   btn.addEventListener("click",function(e){
+     e.preventDefault();
+     e.stopPropagation();
+     var card=btn.closest("[data-menu-day]");
+     var d=card.dataset.menuDay;
+     if(confirm("要取消 DAY "+String(d).padStart(2,"0")+" 的完成紀錄嗎？")){
+       delete done[d];
+       set(DONE,done);
+       paint();
+     }
+   });
+ });
  paint();
 })();
 </script>
